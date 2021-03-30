@@ -7,4 +7,4 @@ simple code for capturing RGBD data with Kinectv2
 - [cvui](https://github.com/Dovyski/cvui)
 
 # Note
-- Type of the saved depth image is `CV_32FC1`, unit is `millimeter` 
+- Type of the saved depth image is `CV_16UC1`, unit is `millimeter` 

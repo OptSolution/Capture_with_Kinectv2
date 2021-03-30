@@ -4,7 +4,7 @@
  * @Email: mr_cwang@foxmail.com
  * @since: 2021-03-22 10:36:32
  * @LastAuthor: Chen Wang
- * @lastTime: 2021-03-25 17:03:19
+ * @lastTime: 2021-03-30 13:45:14
  */
 
 #include <libfreenect2/frame_listener_impl.h>
@@ -154,7 +154,9 @@ int main(int argc, char const *argv[]) {
         cv::imwrite(now_time + "_RGB.png", rgb_cv);
       }
       if (save_depth) {
-        cv::imwrite(now_time + "_depth.png", undistroted_depth_cv);
+        cv::Mat saved_depth;
+        undistroted_depth_cv.convertTo(saved_depth, CV_16UC1);
+        cv::imwrite(now_time + "_depth.png", saved_depth);
       }
       if (save_ir) {
         cv::imwrite(now_time + "_ir.png", ir_cv);
